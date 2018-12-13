@@ -34,5 +34,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(doorOptions[x])
+	newOptions := []int{}
+	for index, door := range doorOptions {
+		if index == y {
+			continue
+		}
+		newOptions = append(newOptions, door)
+	}
+	z := rand.Intn(len(newOptions))
+	fmt.Println(newOptions[z])
 }
